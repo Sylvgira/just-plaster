@@ -105,12 +105,49 @@ const fallbackIcons = [
 
   .service-grid--icon-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0;
+    gap: 1px;
     background: #111111;
     color: #ffffff;
     border-radius: var(--radius-md);
     overflow: hidden;
+    /* default: auto-fill for odd counts (5, 7, 11, etc) */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+
+  /* exact-count column logic using :has() + :last-child */
+  /* 2 items -> 2 columns */
+  .service-grid--icon-grid:has(> :nth-child(2):last-child) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 3 items -> 3 columns */
+  .service-grid--icon-grid:has(> :nth-child(3):last-child) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 4 items -> 4 columns */
+  .service-grid--icon-grid:has(> :nth-child(4):last-child) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* 6 items -> 3 columns (multiple of 3) */
+  .service-grid--icon-grid:has(> :nth-child(6):last-child) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 8 items -> 4 columns (multiple of 4) */
+  .service-grid--icon-grid:has(> :nth-child(8):last-child) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* 9 items -> 3 columns */
+  .service-grid--icon-grid:has(> :nth-child(9):last-child) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 12 items -> 4 columns */
+  .service-grid--icon-grid:has(> :nth-child(12):last-child) {
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .service-icon-card {
@@ -127,10 +164,6 @@ const fallbackIcons = [
 
   .service-icon-card:hover {
     background: rgba(255, 255, 255, 0.05);
-  }
-
-  .service-icon-card + .service-icon-card {
-    border-left: 1px solid rgba(255, 255, 255, 0.12);
   }
 
   .service-icon-card__icon {
@@ -181,20 +214,11 @@ const fallbackIcons = [
     .service-grid--icon-grid {
       grid-template-columns: 1fr 1fr;
     }
-
-    .service-icon-card:nth-child(3) {
-      border-left: none;
-    }
   }
 
   @media (max-width: 540px) {
     .service-grid--icon-grid {
       grid-template-columns: 1fr;
-    }
-
-    .service-icon-card + .service-icon-card {
-      border-left: none;
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
     }
   }
 </style>
