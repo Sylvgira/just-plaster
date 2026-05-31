@@ -198,3 +198,16 @@ p {
 .skip-link:focus {
   transform: translateY(var(--space-4));
 }
+
+/* ── Section spacing ──
+   Same-colour stacked sections compress the gap between them.
+   Sections with different backgrounds keep full spacing. */
+.section:not(.section--surface) + .section:not(.section--surface),
+.section--surface + .section--surface {
+  padding-top: 0;
+}
+
+/* ── Button hierarchy ──
+   Primary (filled), Secondary (ghost/outlined), Tertiary (link).
+   Light variants (--primary-light, --secondary-light, --tertiary-light)
+   for dark backgrounds. See the JTB client fork for examples. */
