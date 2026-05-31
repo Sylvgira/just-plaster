@@ -1,4 +1,6 @@
 ---
+const base = import.meta.env.BASE_URL;
+
 interface Props {
   variant?: 'simple' | 'split-media' | 'centered' | 'service-led' | 'image-full';
   mediaPosition?: 'left' | 'right';
@@ -40,7 +42,7 @@ const showPanel = variant !== 'centered' && variant !== 'image-full';
   <section class="hero hero--image-full">
     <div
       class="hero__bg"
-      style={imageUrl ? `background-image: url(${imageUrl})` : undefined}
+      style={imageUrl ? `background-image: url(${base}${imageUrl.replace(/^\//, '')})` : undefined}
       aria-hidden="true"
     ></div>
     <div class="hero__overlay" aria-hidden="true"></div>

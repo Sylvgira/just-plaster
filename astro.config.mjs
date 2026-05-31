@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://justplaster.com.au',
+  site: 'https://sylvgira.github.io',
+  base: '/just-plaster',
   trailingSlash: 'always'
 });
