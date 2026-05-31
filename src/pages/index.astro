@@ -6,75 +6,71 @@ import Section from '@components/Section.astro';
 import ServiceGrid from '@components/ServiceGrid.astro';
 import Testimonials from '@components/Testimonials.astro';
 import FAQList from '@components/FAQList.astro';
-import LogoStrip from '@components/LogoStrip.astro';
-import GalleryBlock from '@components/GalleryBlock.astro';
 import CTABand from '@components/CTABand.astro';
-import EmbedSection from '@components/EmbedSection.astro';
+import TrustBar from '@components/TrustBar.astro';
 import { byOrder } from '../lib/content';
 
 const site = await getEntry('settings', 'site');
 const home = await getEntry('pages', 'home');
-const services = byOrder(await getCollection('services')).slice(0, 3);
+const services = byOrder(await getCollection('services'));
 const testimonials = byOrder(await getCollection('testimonials'));
 const faqs = byOrder(await getCollection('faqs'));
-const embeds = byOrder(await getCollection('embeds')).filter((embed) => embed.data.enabled);
 
 const hero = home?.data.hero;
 ---
 
 <BaseLayout>
   <Hero
-    variant={hero?.variant}
+    variant={hero?.variant ?? 'image-full'}
     mediaPosition={hero?.mediaPosition}
-    eyebrow={hero?.eyebrow}
-    title={hero?.title ?? `A clean starting point for ${site?.data.name ?? 'your client'}`}
-    intro={hero?.intro ?? 'Replace the content, tune the variables, and keep the structure simple enough for fast client delivery.'}
-    primaryLabel={hero?.primaryLabel ?? 'Start a project'}
+    eyebrow={hero?.eyebrow ?? "Melbourne's Plastering Specialists"}
+    title={hero?.title ?? 'Reliable Plastering\nThat Lasts'}
+    intro={hero?.intro ?? 'Family owned and operated with over 60 years combined experience. From small patches to full renovations — quality workmanship, fair pricing, and we don\'t leave until you\'re satisfied.'}
+    primaryLabel={hero?.primaryLabel ?? 'Fast Free Quote'}
     primaryUrl={hero?.primaryUrl ?? '/contact/'}
-    secondaryLabel={hero?.secondaryLabel ?? 'View services'}
+    secondaryLabel={hero?.secondaryLabel ?? 'Our Services'}
     secondaryUrl={hero?.secondaryUrl ?? '/services/'}
-    mediaLabel={hero?.mediaLabel}
-    mediaTitle={hero?.mediaTitle}
-    mediaText={hero?.mediaText}
-    highlights={hero?.highlights}
+    imageUrl={hero?.imageUrl ?? '/uploads/hero-plastering.jpg'}
+  />
+
+  <TrustBar
+    title="Why choose us"
+    items={[
+      { label: '60+ Years Experience' },
+      { label: 'Licensed & Insured' },
+      { label: 'Premium Materials' },
+      { label: '5-Star Rated' }
+    ]}
+    ctaLabel="Get a Quote"
+    ctaUrl="/contact/"
   />
 
   <Section
-    eyebrow="Services"
-    title="Common offers, ready to tailor"
-    intro="Use these entries as service templates. Keep each page focused on the client problem, the outcome, and the next step."
+    eyebrow="Our Services"
+    title="Complete Plastering Solutions"
+    intro="From small repairs to large commercial projects — we have the skills, experience and dedication to deliver exceptional results every time."
   >
-    <ServiceGrid services={services} variant={home?.data.servicesVariant} />
+    <ServiceGrid services={services} variant={home?.data.servicesVariant ?? 'icon-grid'} />
   </Section>
 
   <Section
     variant="surface"
-    eyebrow="Proof"
-    title="Simple trust signals"
-    intro="Replace these placeholders with real client testimonials, partner logos, memberships, or local credentials."
+    eyebrow="What Our Customers Say"
+    title="Trusted by Melbourne Homeowners"
+    intro="Don't take our word for it — hear from people we've worked with across Melbourne."
   >
-    <Testimonials testimonials={testimonials} variant={home?.data.testimonialsVariant} />
+    <Testimonials testimonials={testimonials} variant={home?.data.testimonialsVariant ?? 'grid'} />
   </Section>
 
-  <Section eyebrow="Associations" title="A neutral strip for credibility">
-    <LogoStrip />
-  </Section>
-
-  <Section variant="surface" eyebrow="Media" title="Placeholder gallery">
-    <GalleryBlock variant={home?.data.galleryVariant} />
-  </Section>
-
-  {embeds.map((embed) => <EmbedSection embed={embed} />)}
-
-  <Section eyebrow="Questions" title="Frequently asked questions">
+  <Section eyebrow="FAQ" title="Common questions">
     <FAQList faqs={faqs} />
   </Section>
 
   <CTABand
-    title="Ready to adapt this for a client?"
-    text="Start with the client brief, update the site settings, then swap the brand tokens before writing detailed copy."
-    label="Contact"
+    title="Ready to get started?"
+    text="Fill out our quick enquiry form or give us a call — we'll provide a free, no-obligation quote for your plastering project."
+    label="Fast Free Quote"
     href="/contact/"
-    variant={home?.data.ctaVariant}
+    variant={home?.data.ctaVariant ?? 'band'}
   />
 </BaseLayout>

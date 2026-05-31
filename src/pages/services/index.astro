@@ -10,11 +10,11 @@ import { byOrder } from '../../lib/content';
 const services = byOrder(await getCollection('services'));
 ---
 
-<BaseLayout title="Services" description="Services page template for a small business website.">
+<BaseLayout title="Services" description="Complete plastering services in Melbourne — residential, commercial, renovations, repairs and more. Fast free quotes.">
   <PageIntro
-    eyebrow="Services"
-    title="Clear service paths"
-    intro="Show visitors the main ways they can work with the business. Each service should have a distinct outcome."
+    eyebrow="Our Services"
+    title="Complete Plastering Solutions"
+    intro="From small patch repairs to full commercial fit-outs — explore our range of plastering services below."
   />
 
   <Section>
@@ -22,7 +22,9 @@ const services = byOrder(await getCollection('services'));
   </Section>
 
   <CTABand
-    title="Not sure which service fits?"
-    text="Invite visitors to send a short enquiry so the business can recommend the right path."
+    title="Not sure which service you need?"
+    text="Send us a quick enquiry with details of your project and we'll recommend the best approach — completely obligation-free."
+    label="Fast Free Quote"
+    href="/contact/"
   />
 </BaseLayout>

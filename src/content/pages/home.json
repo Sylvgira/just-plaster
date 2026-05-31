@@ -1,23 +1,14 @@
 {
   "hero": {
-    "secondaryLabel": "View services",
     "variant": "image-full",
-    "eyebrow": "Premium Timber Flooring",
-    "intro": "Melbourne's trusted timber flooring specialists. From installation to refinishing, we bring craftsmanship and care to every project.",
+    "eyebrow": "Melbourne's Plastering Specialists",
+    "title": "Reliable Plastering\nThat Lasts",
+    "intro": "Family owned and operated with over 60 years combined experience. From small patches to full renovations — quality workmanship, fair pricing, and we don't leave until you're satisfied.",
+    "primaryLabel": "Fast Free Quote",
     "primaryUrl": "/contact/",
-    "mediaPosition": "right",
-    "mediaLabel": "Flexible hero",
-    "mediaText": "Use this space for photography, a proof point, or a location/service cue.",
-    "primaryLabel": "Get a free quote",
-    "mediaTitle": "Choose a hero shape that suits the client",
-    "title": "Beautiful Floors\nStart Here",
+    "secondaryLabel": "Our Services",
     "secondaryUrl": "/services/",
-    "highlights": [
-      "Consulting",
-      "Implementation",
-      "Support",
-      "Test"
-    ]
+    "imageUrl": "/uploads/hero-plastering.jpg"
   },
   "servicesVariant": "icon-grid",
   "testimonialsVariant": "grid",

@@ -1,20 +1,16 @@
 {
-  "name": "Client Business",
-  "description": "A clear small-business website starter built for fast client adaptation.",
-  "url": "https://example.com",
-  "email": "hello@example.com",
-  "phone": "+61 400 000 000",
-  "address": "123 Example Street, Melbourne VIC",
-  "ctaLabel": "Book a call",
+  "name": "Just Plaster",
+  "description": "Melbourne's reliable plastering specialists — small to medium job experts with over 60 years combined experience.",
+  "url": "https://justplaster.com.au",
+  "email": "info@justplaster.com.au",
+  "phone": "0414 945 931",
+  "address": "Servicing all Melbourne suburbs",
+  "ctaLabel": "Fast Free Quote",
   "ctaUrl": "/contact/",
   "socialLinks": [
     {
       "label": "Instagram",
-      "url": "https://example.com"
-    },
-    {
-      "label": "LinkedIn",
-      "url": "https://example.com"
+      "url": "https://instagram.com/justplaster"
     }
   ]
 }

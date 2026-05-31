@@ -2,36 +2,47 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import PageIntro from '@components/PageIntro.astro';
 import Section from '@components/Section.astro';
-import GalleryBlock from '@components/GalleryBlock.astro';
 import CTABand from '@components/CTABand.astro';
 ---
 
-<BaseLayout title="About" description="About page template for a small business website.">
+<BaseLayout title="About" description="About Just Plaster — family owned Melbourne plastering specialists with over 60 years combined experience.">
   <PageIntro
-    eyebrow="About"
-    title="A concise story with practical proof"
-    intro="Use this page to explain who the business serves, what it is known for, and why clients trust it."
+    eyebrow="About Us"
+    title="Melbourne Plastering — Built on Trust"
+    intro="Family owned and operated, licensed builders with a passion for quality workmanship and exceptional customer service."
   />
 
-  <Section title="What clients should understand first" narrow>
+  <Section title="Our Story" narrow>
     <div class="prose">
       <p>
-        This starter keeps the about page direct. Replace this copy with the client’s origin story, service philosophy,
-        qualifications, and local context.
+        Welcome to <strong>BUTCON PTY LTD</strong> trading as <strong>Just Plaster</strong>. We are a family owned and operated company of registered builders with over <strong>60 years combined experience</strong> in the industry.
       </p>
       <p>
-        For most small businesses, the goal is not a long biography. The goal is to make a visitor confident that the
-        business is real, capable, and easy to contact.
+        We hold all building registrations — <strong>L-DBL, U-DBL and U-CBL</strong> — and specialise in all home improvement renovations. Our extensive knowledge and skills span bathrooms, kitchens, laundries and every type of residential and commercial plastering.
+      </p>
+      <p>
+        We pride ourselves on the quality of our workmanship, ensuring our builds last the test of time. Whether it's a small patch repair, a full home renovation, or a large commercial project — we bring the same level of dedication and excellence to every job.
       </p>
     </div>
   </Section>
 
-  <Section variant="surface" eyebrow="Images" title="Team, workplace, or process">
-    <GalleryBlock />
+  <Section variant="surface" title="What Sets Us Apart" narrow>
+    <div class="prose">
+      <h3>Small to Medium Job Specialists</h3>
+      <p>Unlike larger companies that prioritise volume, we specialise in small to medium jobs. This means you get our full attention, competitive pricing, and workmanship that reflects genuine care — not a rushed checklist.</p>
+
+      <h3>Three Solid Guarantees</h3>
+      <p>We back every job with our <strong>Service Guarantee</strong> (premium products, skilled plasterers, family ethics), <strong>Extra Care Guarantee</strong> (we protect your home and clean up every speck), and our <strong>Price Guarantee</strong> (fair pricing that sticks — we'll even beat any genuine quote by 5%).</p>
+
+      <h3>100% Customer Satisfaction</h3>
+      <p>We don't leave until you tell us the job is done to your utmost satisfaction. That's not a slogan — it's how we've built our reputation over six decades.</p>
+    </div>
   </Section>
 
   <CTABand
-    title="Make the next step obvious"
-    text="A strong about page should naturally lead visitors toward an enquiry, booking, or service page."
+    title="Let's talk about your project"
+    text="Contact us today for an obligation-free quotation on your next plastering or building project."
+    label="Fast Free Quote"
+    href="/contact/"
   />
 </BaseLayout>

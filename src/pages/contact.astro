@@ -8,18 +8,27 @@ import ContactBlock from '@components/ContactBlock.astro';
 const site = await getEntry('settings', 'site');
 ---
 
-<BaseLayout title="Contact" description="Contact page template for a small business website.">
+<BaseLayout title="Contact" description="Get a fast, free quote from Just Plaster — Melbourne's reliable plastering specialists. Call 0414 945 931 or enquire online.">
   <PageIntro
     eyebrow="Contact"
-    title="Start with a clear enquiry"
-    intro="Replace this with a short instruction that tells visitors what information to send."
+    title="Get Your Fast Free Quote"
+    intro="Fill out the form below or call us directly — we'll provide a no-obligation quote within 24 hours."
   />
 
   <Section>
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <p style="font-size: 1.5rem; font-weight: 700; color: var(--brand-primary); margin-bottom: 0.5rem;">
+        <a href="tel:0414945931" style="color: inherit; text-decoration: none;">0414 945 931</a>
+      </p>
+      <p style="color: var(--color-text-muted); margin: 0;">Call us for immediate enquiries</p>
+    </div>
     <ContactBlock
       email={site?.data.email}
       phone={site?.data.phone}
       address={site?.data.address}
     />
+    <p style="margin-top: 2rem; text-align: center; font-size: var(--text-sm); color: var(--color-text-muted);">
+      Prefer to email? Send your enquiry, photos or plans to us using the form above and we'll get back to you within 24 hours.
+    </p>
   </Section>
 </BaseLayout>

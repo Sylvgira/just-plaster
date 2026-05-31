@@ -1,5 +1,5 @@
 {
-  "question": "Do you work with clients outside your local area?",
-  "answer": "This answer should reflect the client’s service area, remote availability, or location-specific requirements.",
-  "order": 3
+  "question": "What areas of Melbourne do you service?",
+  "answer": "We service all of metropolitan Melbourne and surrounding suburbs. From the CBD to the outer suburbs — if you're in Melbourne, we'll come to you.",
+  "order": 1
 }

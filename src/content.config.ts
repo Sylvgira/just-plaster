@@ -75,6 +75,7 @@ const pages = defineCollection({
       mediaLabel: z.string().optional(),
       mediaTitle: z.string().optional(),
       mediaText: z.string().optional(),
+      imageUrl: z.string().optional(),
       highlights: z.array(z.string()).default([])
     }),
     servicesVariant: z.enum(['grid', 'list', 'featured-first', 'icon-grid']).default('grid'),

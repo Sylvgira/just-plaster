@@ -10,7 +10,7 @@ interface Props {
   variant?: 'default' | 'dark';
 }
 
-const { site, variant = 'default' } = Astro.props;
+const { site, variant = 'dark' } = Astro.props;
 const year = new Date().getFullYear();
 const isDark = variant === 'dark';
 ---
@@ -19,32 +19,33 @@ const isDark = variant === 'dark';
   <div class="site-footer__inner container">
     <div>
       <a class="site-footer__brand" href="/">{site.name}</a>
-      <p>Clear, useful information for people deciding whether to get in touch.</p>
+      <p>Melbourne's reliable plastering specialists — family owned and operated with over 60 years combined experience. Small to medium job experts.</p>
     </div>
     <div class="site-footer__columns">
       <div>
-        <h2>Explore</h2>
-        <a href="/about/">About</a>
-        <a href="/services/">Services</a>
-        <a href="/blog/">News</a>
-        <a href="/contact/">Contact</a>
+        <h2>Services</h2>
+        <a href="/services/residential-commercial/">Residential & Commercial</a>
+        <a href="/services/garage-ceiling-repairs/">Garage Ceiling Repairs</a>
+        <a href="/services/renovations/">Renovations</a>
+        <a href="/services/patch-repairs/">Patch & Repairs</a>
+        <a href="/services/">All Services</a>
       </div>
       <div>
         <h2>Contact</h2>
-        {site.email && <a href={`mailto:${site.email}`}>{site.email}</a>}
-        {site.phone && <a href={`tel:${site.phone}`}>{site.phone}</a>}
+        {site.phone && <a href={`tel:${site.phone}`} style="font-size: 1.1rem; font-weight: 700;">{site.phone}</a>}
         {site.address && <p>{site.address}</p>}
+        <a href="/contact/">Enquire Online</a>
       </div>
-      {site.socialLinks && site.socialLinks.length > 0 && (
-        <div>
-          <h2>Social</h2>
-          {site.socialLinks.map((link) => <a href={link.url}>{link.label}</a>)}
-        </div>
-      )}
+      <div>
+        <h2>Company</h2>
+        <a href="/about/">About Us</a>
+        <a href="/contact/">Get a Quote</a>
+        {site.socialLinks && site.socialLinks.map((link) => <a href={link.url}>{link.label}</a>)}
+      </div>
     </div>
   </div>
   <div class="site-footer__meta container">
-    <span>&copy; {year} {site.name}</span>
+    <span>&copy; {year} {site.name} — BUTCON PTY LTD</span>
     <a href="/privacy/">Privacy</a>
   </div>
 </footer>
@@ -91,6 +92,10 @@ const isDark = variant === 'dark';
     text-decoration: none;
   }
 
+  .site-footer a:hover {
+    color: var(--color-text);
+  }
+
   .site-footer p {
     max-width: 28rem;
     margin-bottom: 0;
@@ -115,7 +120,7 @@ const isDark = variant === 'dark';
 
   .site-footer--dark {
     border-top: none;
-    background: #111111;
+    background: #1a1a1a;
     color: #ffffff;
   }
 
