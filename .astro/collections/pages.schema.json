@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "hero": {
+      "type": "object",
+      "properties": {
+        "variant": {
+          "default": "simple",
+          "type": "string",
+          "enum": [
+            "simple",
+            "split-media",
+            "centered",
+            "service-led",
+            "image-full"
+          ]
+        },
+        "mediaPosition": {
+          "default": "right",
+          "type": "string",
+          "enum": [
+            "left",
+            "right"
+          ]
+        },
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "intro": {
+          "type": "string"
+        },
+        "primaryLabel": {
+          "type": "string"
+        },
+        "primaryUrl": {
+          "type": "string"
+        },
+        "secondaryLabel": {
+          "type": "string"
+        },
+        "secondaryUrl": {
+          "type": "string"
+        },
+        "mediaLabel": {
+          "type": "string"
+        },
+        "mediaTitle": {
+          "type": "string"
+        },
+        "mediaText": {
+          "type": "string"
+        },
+        "imageUrl": {
+          "type": "string"
+        },
+        "highlights": {
+          "default": [],
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "title",
+        "intro"
+      ]
+    },
+    "servicesVariant": {
+      "default": "grid",
+      "type": "string",
+      "enum": [
+        "grid",
+        "list",
+        "featured-first",
+        "icon-grid"
+      ]
+    },
+    "testimonialsVariant": {
+      "default": "grid",
+      "type": "string",
+      "enum": [
+        "grid",
+        "stacked"
+      ]
+    },
+    "galleryVariant": {
+      "default": "grid",
+      "type": "string",
+      "enum": [
+        "grid",
+        "feature-left",
+        "feature-right",
+        "portfolio"
+      ]
+    },
+    "ctaVariant": {
+      "default": "band",
+      "type": "string",
+      "enum": [
+        "band",
+        "split",
+        "inline"
+      ]
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "hero"
+  ]
+}
