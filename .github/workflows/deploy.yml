@@ -14,6 +14,8 @@ jobs:
           node-version: 22
       - run: npm ci
       - run: npm run build
+      - name: Fix asset paths for GitHub Pages subpath
+        run: node scripts/fix-gh-pages.cjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist/
